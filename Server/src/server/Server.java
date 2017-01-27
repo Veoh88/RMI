@@ -4,7 +4,7 @@ import java.rmi.*;
 import java.net.*;
 import java.rmi.server.*;
 
-import intrefaces.ServerInterface;
+import intrefaces.ServerInterface;;
 
 public class Server extends UnicastRemoteObject implements ServerInterface {
 
@@ -18,8 +18,11 @@ public class Server extends UnicastRemoteObject implements ServerInterface {
 	}
 
 	@Override
-	public int add(int a, int b) {
-		return a+b;
+	public int add(int a, int b) throws RemoteException {
+		// TODO Auto-generated method stub
+		return 0;
 	}
+
+
 
 }

@@ -1,8 +1,9 @@
 package intrefaces;
 
 import java.rmi.Remote;
+import java.rmi.RemoteException;
 
-public interface ServerInterface extends Remote{
+public interface ServerInterface extends Remote {
 		
-	int add(int a, int b);
+	public int add(int a, int b) throws RemoteException;
 }
