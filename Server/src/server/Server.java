@@ -1,10 +1,25 @@
 package server;
 
-public class Server {
+import java.rmi.*;
+import java.net.*;
+import java.rmi.server.*;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+import intrefaces.ServerInterface;
 
+public class Server extends UnicastRemoteObject implements ServerInterface {
+
+	protected Server(String name) throws RemoteException {
+		try {
+			Naming.rebind("rmi:///" + name, this);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public int add(int a, int b) {
+		return a+b;
 	}
 
 }
